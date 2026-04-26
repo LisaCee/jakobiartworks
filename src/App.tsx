@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/layout/layout.tsx'
+import Layout from './components/layout/Layout.tsx'
 import About from './pages/About.tsx'
 import Gallery from './pages/Gallery.tsx'
 
