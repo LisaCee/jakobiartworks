@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom"
-import Sidebar from './Sidebar'
+import { type ReactElement } from "react";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import SiteNav from "./SiteNav";
 
-export default function Layout() {
-    return (
-    <div className="min-h-screen bg-background flex">
-      <Sidebar />
-      <main className="flex-1 p-8">
-        <Outlet />
-      </main>
-    </div>
-  )
+export default function Layout({ children }: { children: ReactElement }) {
+	return (
+		<TooltipProvider>
+			<SidebarProvider>
+				<SiteNav />
+				<SidebarInset>
+					<main className="flex-1 p-8">{children}</main>
+				</SidebarInset>
+			</SidebarProvider>
+		</TooltipProvider>
+	);
 }
