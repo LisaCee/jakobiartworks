@@ -13,6 +13,7 @@ import {
 	SidebarFooter,
 	SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { useLocation, Link } from "react-router-dom";
 
 const navItems = [
 	{ href: "/", title: "Home", icon: ScanHeart },
@@ -22,25 +23,30 @@ const navItems = [
 
 export default function SiteNav(): ReactElement {
 	const { dark, updateTheme } = useTheme();
+	const { pathname } = useLocation();
 
 	return (
 		<Sidebar collapsible="icon">
 			<SidebarHeader className="flex flex-row items-center justify-between ">
 				{/* expanded */}
-				<div className="group-data-[collapsible=icon]:hidden flex items-center justify-between w-full">
-					<span className="font-semibold">Jakobi Art Works</span>
-					<SidebarTrigger />
-				</div>
+				<Link to="/">
+					<div className="group-data-[collapsible=icon]:hidden flex items-center justify-between w-full">
+						<span className="font-semibold">Jakobi Art Works</span>
+						<SidebarTrigger />
+					</div>
+				</Link>
 
 				{/* collapsed */}
-				<div className="hidden group-data-[collapsible=icon]:flex flex-col items-center gap-1 py-2">
-					<div className="flex flex-col items-center text-xs font-semibold tracking-widest text-foreground">
-						<span>J</span>
-						<span>A</span>
-						<span>W</span>
+				<Link to="/">
+					<div className="hidden group-data-[collapsible=icon]:flex flex-col items-center gap-1 py-2">
+						<div className="flex flex-col items-center text-xs font-semibold tracking-widest text-foreground">
+							<span>J</span>
+							<span>A</span>
+							<span>W</span>
+						</div>
+						<SidebarTrigger />
 					</div>
-					<SidebarTrigger />
-				</div>
+				</Link>
 			</SidebarHeader>
 
 			<SidebarContent>
@@ -52,12 +58,14 @@ export default function SiteNav(): ReactElement {
 									<SidebarMenuButton
 										asChild
 										tooltip={item.title}
-										className="flex flex-row justify-between"
+										isActive={pathname === item.href}
+										className="flex flex-row justify-between p-4 rounded-0"
+										size="lg"
 									>
-										<a href={item.href}>
+										<Link to={item.href}>
 											<span>{item.title}</span>
 											<item.icon />
-										</a>
+										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							))}
