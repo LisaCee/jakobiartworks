@@ -46,43 +46,23 @@
 
 @layer base {
 	:root {
-		--background: #f2f2f0;
-		--surface: #ffffff;
+		--background: #f8f8f8;
+		--surface: #f8f8f8;
 		--border: #d9d9d6;
 		--border-accent: red;
 		--foreground: #1f1f1e;
 		--muted: #6e6e6a;
 		--muted-foreground: #9a9a96;
-
-		--sidebar-background: var(--background);
-		--sidebar-foreground: var(--foreground);
-		--sidebar-border: var(--border);
-		--sidebar-accent: var(--surface);
-		--sidebar-accent-foreground: var(--foreground);
-		--sidebar-primary: var(--foreground);
-		--sidebar-primary-foreground: var(--surface);
-		--sidebar-ring: var(--border);
-		--sidebar-hover: #e8e8e6;
 	}
 
 	.dark {
-		--background: #1a1d21;
+		--background: #272d33;
 		--surface: #272d33;
 		--border: #1a1d21;
 		--border-accent: white;
 		--foreground: #e8eaed;
 		--muted: #9aa0a8;
-		--muted-foreground: #6b7580;
-
-		--sidebar-background: var(--background);
-		--sidebar-foreground: var(--foreground);
-		--sidebar-border: var(--border);
-		--sidebar-accent: color-mix(in srgb, var(--surface) 70%, transparent);
-		--sidebar-accent-foreground: var(--foreground);
-		--sidebar-primary: var(--foreground);
-		--sidebar-primary-foreground: var(--surface);
-		--sidebar-ring: var(--border);
-		--sidebar-hover: #222629;
+		--muted-foreground: #9aa0a8;
 	}
 }
 
@@ -96,15 +76,6 @@
 	--color-foreground: var(--foreground);
 	--color-muted: var(--muted);
 	--color-muted-foreground: var(--muted-foreground);
-
-	--color-sidebar: var(--sidebar-background);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-ring: var(--sidebar-ring);
 }
 
 h1 {

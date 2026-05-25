@@ -9,7 +9,7 @@ export default function TopNav() {
 	const { pathname } = useLocation();
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 h-10 bg-surface border-b border-border font-[Khand-Medium]">
+		<header className="fixed top-0 left-0 right-0 z-50 h-10 bg-surface shadow-sm font-[Khand-Medium]">
 			<div className="flex justify-between mx-auto px-4 max-w-7xl h-full items-center">
 				<Link to="/" className="font-semibold text-foreground">
 					Jakobi Art Works
@@ -33,11 +33,16 @@ export default function TopNav() {
 						</Link>
 					))}
 					<a
-						href="#"
+						href="https://www.instagram.com/j.a.w/"
+						target="_blank"
+						rel="noopener noreferrer"
 						aria-label="Instagram"
 						className="text-muted-foreground hover:text-foreground transition-colors"
 					>
 						<FaInstagram size={18} />
+						<span className="sr-only">
+							Instagram - opens in new link
+						</span>
 					</a>
 					<button
 						onClick={updateTheme}
