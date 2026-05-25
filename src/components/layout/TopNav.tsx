@@ -9,7 +9,7 @@ export default function TopNav() {
 	const { pathname } = useLocation();
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 h-14 bg-surface border-b border-border">
+		<header className="fixed top-0 left-0 right-0 z-50 h-10 bg-surface border-b border-border font-[Khand-Medium]">
 			<div className="flex justify-between mx-auto px-4 max-w-7xl h-full items-center">
 				<Link to="/" className="font-semibold text-foreground">
 					Jakobi Art Works

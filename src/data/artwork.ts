@@ -3,6 +3,7 @@ type Artwork = {
 	src: string;
 	alt: string;
 	title: string;
+	featured?: boolean;
 };
 
 export const artworks: Artwork[] = [
@@ -30,6 +31,7 @@ export const artworks: Artwork[] = [
 		src: "/assets/heart-lg-orange-red-purple.jpg",
 		title: "Title",
 		alt: "heart",
+		featured: true,
 	},
 
 	{
@@ -37,26 +39,26 @@ export const artworks: Artwork[] = [
 		src: "/assets/heart-lg-pink-blue.jpg",
 		title: "Title",
 		alt: "heart",
-    },
-    {
+	},
+	{
 		id: 6,
 		src: "/assets/heart-lg-red-orange-silver.jpg",
 		title: "Title",
 		alt: "heart",
-    },
-    {
+	},
+	{
 		id: 7,
 		src: "/assets/heart-lg-red-purple-blue.jpg",
 		title: "Title",
 		alt: "heart",
-    },
-    {
+	},
+	{
 		id: 8,
 		src: "/assets/heart-lg-yellow-orange-blue.jpg",
 		title: "Title",
 		alt: "heart",
-    },
-     {
+	},
+	{
 		id: 9,
 		src: "/assets/heart-lg-yellow-purple-red.jpg",
 		title: "Title",
