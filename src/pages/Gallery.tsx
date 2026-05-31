@@ -12,7 +12,7 @@ export default function Home() {
 				{artworks.map((artwork) => (
 					<div
 						key={artwork.id}
-						className={`aspect-square ${artwork?.featured ? "col-span-2 row-span-2" : ""} cursor-pointer p-4`}
+						className={`aspect-square ${artwork?.featured ? "col-span-2 row-span-2" : ""} p-4`}
 						onClick={() => console.log("clicked", artwork.id)}
 					>
 						<img
