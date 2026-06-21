@@ -1,8 +1,8 @@
 export default function About() {
   return (
-		<div className="flex flex-col gap-8 bg-surface text-foreground p-7 font-[GeneralSans-Light] rounded-sm shadow md:flex-row">
+		<div className="flex flex-col-reverse md:gap-8 bg-surface text-foreground p-4 md:p-7 font-[GeneralSans-Light] rounded-sm shadow md:flex-row md:my-15 lg:my-25">
 			<div className="flex flex-col justify-evenly py-2 md:w-1/2">
-				<hr className="border-t-[0.5px] border-muted-foreground" />
+				<hr className="hidden border-t-[0.5px] border-muted-foreground md:block mb-4" />
 
 				<p className="leading-relaxed mx-3">
 					Hi, I'm Jakobi — an artist and middle school art teacher
@@ -20,14 +20,15 @@ export default function About() {
 					can often be adjusted to fit your style. Get in touch if you
 					have something in mind.
 				</p>
-				<hr className="border-t-[0.5px] border-muted-foreground" />
+				<hr className="hidden md:block border-t-[0.5px] border-muted-foreground mt-4" />
 			</div>
-			<div className="md:w-1/2 my-4">
+			<div className="flex flex-col md:w-1/2 my-4">
 				<img
 					src="/assets/images/artist-portrait.jpg"
 					alt="The artist with a red, 8-bit concrete heart over his face"
 					className="w-full h-full object-cover rounded"
 				/>
+				<hr className="border-t-[0.5px] mt-8 border-muted-foreground pt-2 md:hidden" />
 			</div>
 		</div>
   );

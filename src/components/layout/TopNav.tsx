@@ -9,12 +9,15 @@ export default function TopNav() {
 	const { pathname } = useLocation();
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 h-10 bg-background shadow-xs font-[Khand-Medium]">
-			<div className="flex justify-between mx-auto px-4 max-w-7xl h-full items-center">
-				<Link to="/" className="font-semibold text-foreground">
+		<header className="fixed top-0 left-0 right-0 z-50 h-14 bg-background shadow-xs font-[Khand-Medium]">
+			<div className="flex justify-between mx-auto px-4 py-4 max-w-7xl h-full items-center">
+				<Link
+					to="/"
+					className="text-3xl font-semibold text-foreground md:text-2xl"
+				>
 					Jakobi Art Works
 				</Link>
-				<div className="flex gap-4">
+				<div className="flex gap-4 items-center">
 					{navItems.map((item) => (
 						<Link
 							key={item.href}
@@ -26,7 +29,7 @@ export default function TopNav() {
 									: "text-muted hover:text-foreground"
 							}`}
 						>
-							<item.icon size={18} />
+							<item.icon className="size-6 md:size-5" />
 							<span className="hidden md:inline text-sm">
 								{item.title}
 							</span>
@@ -39,7 +42,7 @@ export default function TopNav() {
 						aria-label="Instagram"
 						className="text-muted hover:text-foreground transition-colors"
 					>
-						<FaInstagram size={18} />
+						<FaInstagram className="size-6 md:size-5" />
 						<span className="sr-only">
 							Instagram - opens in new link
 						</span>
@@ -53,7 +56,11 @@ export default function TopNav() {
 						}
 						className="text-muted hover:text-foreground transition-colors"
 					>
-						{dark ? <Sun size={18} /> : <Moon size={18} />}
+						{dark ? (
+							<Sun className="size-6 md:size-5" />
+						) : (
+							<Moon className="size-6 md:size-5" />
+						)}
 					</button>
 				</div>
 			</div>
