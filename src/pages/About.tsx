@@ -17,8 +17,9 @@ export default function About() {
 				</p>
 				<p className="leading-relaxed mx-3">
 					Custom orders are always welcome — size, color, and design
-					can often be adjusted to fit your style. Get in touch if you
-					have something in mind.
+					can often be adjusted to fit your style.{" "}
+					<a href="mailto:jakobi@jakobiartworks.com">Get in touch</a>{" "}
+					if you have something in mind.
 				</p>
 				<hr className="hidden md:block border-t-[0.5px] border-muted-foreground mt-4" />
 			</div>
