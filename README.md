@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Jakobi Art Works
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The portfolio site for Jakobi, an artist known for painted concrete hearts done in a street art style. The site showcases the gallery of work in a masonry-style grid with scroll-triggered animations, and gives visitors a way to browse and learn more about the artist and the pieces.
 
-Currently, two official plugins are available:
+Live at [jakobiartworks.com](https://jakobiartworks.com).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Who this is for
 
-## React Compiler
+- **Site visitors / art lovers** browsing the gallery to see available or past work.
+- **Jakobi** as the site owner, for reference on how content and images are structured.
+- **Developers** (mainly future-me) maintaining or extending the site.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript**
+- **Vite** for dev server and build tooling
+- **Tailwind CSS v4** for styling
+- **Radix UI** primitives (via the `shadcn` CLI) for accessible, unstyled components
+- **React Router** for client-side routing
+- **Lucide** / **React Icons** for iconography
+- **Fontsource** for self-hosted variable fonts (Figtree)
+- CSS Grid masonry gallery with scroll-triggered animations
+- Deployed on **Netlify**, with DNS/email routing through **Cloudflare**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting started locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) 20+ (or whatever LTS matches the `vite`/`typescript` versions in `package.json`)
+- npm (ships with Node)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install
+
+```bash
+git clone https://github.com/LisaCee/jakobiartworks.git
+cd jakobiartworks
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run the dev server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+This starts Vite's dev server (with hot module reloading) — the terminal output will show the local URL, typically `http://localhost:5173`.
+
+### Other scripts
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Type-check with `tsc` and build a production bundle to `dist/` |
+| `npm run preview` | Serve the production build locally to sanity-check it |
+| `npm run lint` | Run ESLint over the project |
+
+## Project structure
+
+```
+jakobiartworks/
+├── public/          # Static assets served as-is
+├── src/             # Application source (components, routes, styles)
+├── index.html       # Vite entry HTML
+├── vite.config.ts   # Vite configuration
+├── components.json  # shadcn/Radix component config
+└── tailwind config via @tailwindcss/vite
+```
+
+## Deployment
+
+The site is deployed on Netlify, with the domain and DNS managed through Cloudflare. Pushing to `main` triggers a new build/deploy on Netlify.
+
+## Notes
+
+- Fonts are self-hosted rather than pulled from a CDN.
+- If you're setting up DNS/email routing fresh, make sure any required A/CNAME records for subdomains are in place before expecting SSL/DCV to pass.
